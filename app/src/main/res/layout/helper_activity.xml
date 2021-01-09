@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/first_tip"
+        style="@style/StreamerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_tip"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/streaming_tip"
+        app:layout_constraintEnd_toEndOf="@+id/streaming_tip"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/streaming_tip"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/streaming_tip"
+        style="@style/StreamerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/streaming_tip"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/connecting_tip"
+        app:layout_constraintEnd_toEndOf="@+id/connecting_tip"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/connecting_tip"
+        app:layout_constraintTop_toBottomOf="@+id/first_tip" />
+
+    <TextView
+        android:id="@+id/connecting_tip"
+        style="@style/StreamerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connecting_tip"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/last_tip"
+        app:layout_constraintEnd_toEndOf="@+id/last_tip"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/last_tip"
+        app:layout_constraintTop_toBottomOf="@+id/streaming_tip" />
+
+    <TextView
+        android:id="@+id/last_tip"
+        style="@style/StreamerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_tip"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/next_tip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connecting_tip" />
+
+    <Button
+        android:id="@+id/next_tip"
+        style="@style/StreamerButton"
+        android:layout_marginBottom="64dp"
+        android:text="@string/next_tip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

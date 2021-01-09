@@ -1,0 +1,46 @@
+import ru.ilia.reader.AppConfig
+import ru.ilia.reader.DependencyPlugin
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply plugin: DependencyPlugin
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion AppConfig.COMPILE_SDK
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId AppConfig.appId
+        minSdkVersion AppConfig.MIN_SDK
+        targetSdkVersion AppConfig.TARGET_SDK
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+
+repositories {
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    mavenCentral()
+}
