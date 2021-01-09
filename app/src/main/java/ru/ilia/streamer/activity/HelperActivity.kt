@@ -36,7 +36,7 @@ class HelperActivity : AppCompatActivity() {
 
     override fun finish() {
         super.finish()
-        PreferenceManager.setBoolean(HAD_LAUNCH, true)
+        PreferenceManager.setHasBeenLaunchedBefore()
     }
 
     private fun showNextTip() {
@@ -48,8 +48,6 @@ class HelperActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val HAD_LAUNCH = "launch_tag"
-
         @JvmStatic
         fun launch(context: Context) {
             val intent = Intent(context, HelperActivity::class.java)
